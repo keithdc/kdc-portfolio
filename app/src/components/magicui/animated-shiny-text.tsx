@@ -12,7 +12,7 @@ interface AnimatedShinyTextProps {
   shimmerWidth?: number;
 }
 
-/** Readable copper text with a light shine sweep. */
+/** Readable steel text with a light shine sweep. */
 function AnimatedShinyText({
   children,
   className,
@@ -26,8 +26,8 @@ function AnimatedShinyText({
         } as CSSProperties
       }
       className={cn(
-        "inline-flex items-center justify-center font-semibold text-[#8F5A32]",
-        "bg-gradient-to-r from-[#8F5A32] via-[#D4A57A] to-[#8F5A32] bg-[length:var(--shiny-width)_100%] bg-clip-text text-transparent animate-shiny-text",
+        "inline-flex items-center justify-center font-semibold text-[#2A4359]",
+        "bg-gradient-to-r from-[#2A4359] via-[#5C7D9A] to-[#2A4359] bg-[length:var(--shiny-width)_100%] bg-clip-text text-transparent animate-shiny-text",
         className,
       )}
     >

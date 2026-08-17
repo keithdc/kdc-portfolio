@@ -18,11 +18,11 @@ interface ShimmerButtonProps extends ComponentPropsWithoutRef<"button"> {
 
 /** A button with a shimmering light that travels around the perimeter. */
 function ShimmerButton({
-  shimmerColor = "#D4A57A",
+  shimmerColor = "#5C7D9A",
   shimmerSize = "0.05em",
   shimmerDuration = "3s",
   borderRadius = "100px",
-  background = "rgba(184, 122, 75, 0.95)",
+  background = "rgba(58, 90, 120, 0.95)",
   className,
   children,
   ...props

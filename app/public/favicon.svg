@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="16" fill="#14181F"/>
-  <path d="M18 44V20h6.4l8.2 14.8L41 20H47v24h-5.2V28.4L34.2 42h-4.2L22.8 28.5V44H18z" fill="#B87A4B"/>
+  <!-- Ink rounded square + steel K monogram for Keith Dale Cordova -->
+  <rect width="64" height="64" rx="14" fill="#0E1218"/>
+  <path
+    fill="#5C7D9A"
+    d="M20 16h7.2v13.4L40.6 16H49l-15.2 15.8L49.4 48H40.8L27.2 33.2V48H20V16z"
+  />
 </svg>

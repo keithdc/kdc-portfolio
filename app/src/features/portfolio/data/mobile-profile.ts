@@ -1,47 +1,50 @@
 /**
- * @file mobile-profile.ts — Angular/Ionic portfolio (iScale-focused CV)
+ * @file mobile-profile.ts — Full Stack Angular/Ionic portfolio (iScale-focused CV)
  * @feature portfolio
  */
 import type { PortfolioProfile } from "./types";
+import { CAREER_START_YEAR, yearsLabel, yearsSince } from "./career";
 import {
   sharedContact,
   sharedEducation,
   sharedExperience,
+  sharedProjects,
   sharedSkillGroups,
 } from "./shared-experience";
 
-/** Angular / Ionic profile for iScale and hybrid mobile conversations. */
+const yearsInTech = yearsLabel(CAREER_START_YEAR);
+
+/** Full-stack Angular / Ionic profile for hybrid + API delivery conversations. */
 export const mobileProfile: PortfolioProfile = {
   id: "mobile",
   path: "/mobile",
-  label: "Angular · Ionic",
-  tagline: "Hybrid Mobile · Angular · Frontend Craft",
-  title: "Senior Angular / Ionic Developer",
+  label: "Full Stack · Angular · Ionic",
+  tagline: "Full Stack · Hybrid Mobile · Angular",
+  title: "Senior Full Stack · Angular / Ionic",
   headline:
-    "I build high-performing Angular and Ionic apps that feel native, fast, and maintainable.",
-  summary:
-    "Senior frontend engineer with 12+ years of experience, specializing in Angular and Ionic. I ship hybrid mobile products, lead framework upgrades, and handle the practical backend work—SQL and API endpoints—that keeps feature delivery moving.",
-  about:
-    "I’m a frontend specialist with 12+ years shipping software products, with deep focus on Angular, Ionic, TypeScript, and hybrid mobile platforms. At iScale Ventures, I’ve led Ionic v8 feature work and page revamps, built reusable components, owned iOS/Android release builds, and driven Angular upgrades plus Cordova-to-Capacitor migration. I’m strongest in the UI layer—performance, maintainable architecture, and reusable systems—while staying effective on practical backend tasks like SQL and API endpoints so frontend work isn’t blocked. Earlier leadership as a Development Manager sharpened how I mentor peers and keep quality high while moving fast.",
+    "I build full-stack Angular and Ionic products—from polished UI to APIs and data—that feel fast and maintainable.",
+  summary: `Senior full-stack engineer with ${yearsInTech} years of experience, specializing in Angular and Ionic. I ship hybrid mobile products, lead framework upgrades, and own the backend work—SQL, REST APIs, and release pipelines—that keeps feature delivery moving end to end.`,
+  about: `I’m a full-stack engineer with ${yearsInTech} years shipping software products, with deep focus on Angular, Ionic, TypeScript, and hybrid mobile platforms—plus practical backend delivery in SQL, REST APIs, and Node.js. At iScale Ventures, I’ve led Ionic v8 feature work and page revamps, built reusable components, owned iOS/Android release builds, and driven Angular upgrades plus Cordova-to-Capacitor migration. I also work across the product surface with backend fundamentals (including Ruby) so features aren’t blocked at the API or data layer. Earlier leadership as a Development Manager sharpened how I mentor peers and keep quality high while moving fast.`,
   expertiseNote:
-    "Core strength: Angular, Ionic, and hybrid mobile delivery. Practical range: SQL, API endpoints, and cross-stack collaboration.",
+    "Full stack enabled: Angular/Ionic mobile + SQL, REST APIs, Node.js, and release ownership.",
   contactBlurb:
-    "Open to senior Angular / Ionic and hybrid mobile frontend roles where craft, ownership, and reliable delivery matter. Reach me on email, WhatsApp, or Viber.",
-  aboutHeading: "Frontend craft built for hybrid products.",
+    "Open to senior full-stack Angular / Ionic and hybrid mobile roles where end-to-end ownership and reliable delivery matter. Reach me on email, LinkedIn, WhatsApp, or Viber.",
+  aboutHeading: "Full-stack craft built for hybrid products.",
   experienceHeading: "Experience behind the products I ship.",
   experienceIntro:
-    "Angular and Ionic delivery, with earlier leadership and frontend experience that shaped how I build, mentor, and release.",
+    "From building apps at Yondu, through Finch leadership and frontend craft, to Angular/Ionic full-stack delivery at iScale.",
   ...sharedContact,
   focusAreas: [
     "Ionic v8 + Capacitor mobile apps",
+    "Full-stack feature delivery (UI → API → SQL)",
     "Angular upgrades & modern architecture",
-    "Reusable component systems",
+    "REST APIs, SQL & Node.js collaboration",
     "iOS / Android release pipelines",
-    "Practical SQL & API endpoints",
     "AI-assisted development workflows",
   ],
+  heroRotateWords: ["Full Stack", "Angular · Ionic", "Hybrid Mobile"],
   stats: [
-    { label: "Years in tech", value: 12, suffix: "+" },
+    { label: "Years in tech", value: yearsSince(CAREER_START_YEAR), suffix: "+" },
     { label: "Years in frontend", value: 7, suffix: "+" },
     { label: "Hybrid releases", value: 15, suffix: "+" },
   ],
@@ -50,10 +53,10 @@ export const mobileProfile: PortfolioProfile = {
     "Ionic",
     "Capacitor",
     "TypeScript",
-    "RxJS",
-    "SQL",
     "Node.js",
-    "Tailwind",
+    "SQL",
+    "REST",
+    "CI/CD",
   ],
   experience: [
     {
@@ -66,12 +69,13 @@ export const mobileProfile: PortfolioProfile = {
         "Created reusable Ionic components shared across screens, reducing duplication and accelerating new development.",
         "Built release versions through Xcode for iOS and Android Studio for Android, keeping store-ready builds reliable.",
         "Led Angular version upgrades and the migration from Cordova to Capacitor for a more modern, sustainable mobile stack.",
-        "Learned backend fundamentals with Ruby to collaborate more effectively across the product surface.",
+        "Expanded into backend fundamentals with Ruby and API collaboration so features moved end to end across the product surface.",
         "Introduced a balanced AI + manual coding approach that improved delivery efficiency while protecting code quality.",
       ],
     },
     ...sharedExperience,
   ],
+  projects: sharedProjects,
   skills: [
     {
       category: "Frontend (Core)",
@@ -98,15 +102,19 @@ export const mobileProfile: PortfolioProfile = {
       ],
     },
     {
-      category: "Backend (Practical)",
+      category: "Backend & Data",
       items: [
         ...sharedSkillGroups.backendPractical.filter((item) => item !== "NoSQL"),
-        "Ruby (learning)",
+        "Ruby",
       ],
     },
     {
       category: "Cloud & DevOps",
       items: sharedSkillGroups.cloudDevops,
+    },
+    {
+      category: "Testing & Quality",
+      items: sharedSkillGroups.testing,
     },
     {
       category: "Leadership & Tools",

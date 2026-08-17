@@ -33,15 +33,15 @@ function ColorModeProvider({
   children,
 }: ColorModeProviderProps): React.JSX.Element {
   const [mode, setMode] = useState<ColorMode>(() => {
-    const stored = localStorage.getItem("kdc-color-mode-v2");
+    const stored = localStorage.getItem("kdc-color-mode-v3");
     if (stored === "light" || stored === "dark") return stored;
-    return "dark";
+    return "light";
   });
 
   const toggleColorMode = useCallback((): void => {
     setMode((prev) => {
       const next = prev === "dark" ? "light" : "dark";
-      localStorage.setItem("kdc-color-mode-v2", next);
+      localStorage.setItem("kdc-color-mode-v3", next);
       return next;
     });
   }, []);

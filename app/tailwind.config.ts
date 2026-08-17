@@ -13,10 +13,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        copper: "#B87A4B",
-        "copper-light": "#D4A57A",
+        steel: "#3A5A78",
+        "steel-light": "#5C7D9A",
+        bronze: "#A67C52",
+        "bronze-light": "#C4A07A",
         ink: "#14181F",
-        teal: "#2F5D62",
+        slate: "#5B6B7A",
       },
       animation: {
         marquee: "marquee var(--duration) infinite linear",

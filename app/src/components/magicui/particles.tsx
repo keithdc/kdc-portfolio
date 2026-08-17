@@ -43,7 +43,7 @@ function Particles({
   staticity = 50,
   ease = 50,
   size = 0.4,
-  color = "#B87A4B",
+  color = "#3A5A78",
   vx = 0,
   vy = 0,
 }: ParticlesProps): React.JSX.Element {

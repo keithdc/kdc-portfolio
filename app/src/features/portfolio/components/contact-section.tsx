@@ -1,5 +1,5 @@
 /**
- * @file contact-section.tsx — Contact CTA with email, WhatsApp, and Viber
+ * @file contact-section.tsx — Contact CTA with email, LinkedIn, WhatsApp, and Viber
  * @feature portfolio
  * @dependencies @mui/material, magicui
  */
@@ -8,7 +8,9 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { TextAnimate } from "@/components/magicui/text-animate";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { useColorMode } from "@/shared/hooks/use-color-mode";
@@ -23,7 +25,7 @@ function toPhoneDigits(phone: string): string {
   return phone.replace(/\D/g, "");
 }
 
-/** Closing contact section with email, WhatsApp, Viber, and location. */
+/** Closing contact section with email, LinkedIn, WhatsApp, Viber, and location. */
 function ContactSection({ profile }: ContactSectionProps): React.JSX.Element {
   const theme = useTheme();
   const { mode } = useColorMode();
@@ -44,11 +46,11 @@ function ContactSection({ profile }: ContactSectionProps): React.JSX.Element {
               borderRadius: 4,
               px: { xs: 3, md: 6 },
               py: { xs: 5, md: 7 },
-              bgcolor: isDark ? "rgba(23,28,36,0.88)" : "rgba(255,255,255,0.88)",
+              bgcolor: isDark ? "rgba(23,28,36,0.88)" : "rgba(255,255,255,0.92)",
               border: `1px solid ${theme.palette.divider}`,
               backgroundImage: isDark
-                ? "radial-gradient(circle at 50% 0%, rgba(184,122,75,0.18), transparent 55%)"
-                : "radial-gradient(circle at 50% 0%, rgba(184,122,75,0.14), transparent 55%)",
+                ? "radial-gradient(circle at 50% 0%, rgba(58,90,120,0.20), transparent 55%)"
+                : "radial-gradient(circle at 50% 0%, rgba(58,90,120,0.12), transparent 55%)",
             }}
           >
             <BorderBeam duration={11} size={220} />
@@ -66,7 +68,9 @@ function ContactSection({ profile }: ContactSectionProps): React.JSX.Element {
                 mb: 2,
               }}
             >
-              Ready when you are.
+              <TextAnimate animation="blurInUp" by="word" once as="span">
+                Ready when you are.
+              </TextAnimate>
             </Typography>
             <Typography
               variant="body1"
@@ -90,6 +94,17 @@ function ContactSection({ profile }: ContactSectionProps): React.JSX.Element {
                 </ShimmerButton>
               </a>
               <Button
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outlined"
+                size="large"
+                startIcon={<LinkedInIcon />}
+                sx={{ borderRadius: 999, px: 3.5 }}
+              >
+                LinkedIn
+              </Button>
+              <Button
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -112,7 +127,7 @@ function ContactSection({ profile }: ContactSectionProps): React.JSX.Element {
                   color: "secondary.main",
                   "&:hover": {
                     borderColor: "secondary.dark",
-                    bgcolor: "rgba(47,93,98,0.08)",
+                    bgcolor: "rgba(166,124,82,0.08)",
                   },
                 }}
               >
@@ -125,10 +140,29 @@ function ContactSection({ profile }: ContactSectionProps): React.JSX.Element {
               spacing={2.5}
               justifyContent="center"
               alignItems="center"
+              flexWrap="wrap"
+              useFlexGap
             >
               <Stack direction="row" spacing={1} alignItems="center" color="text.secondary">
                 <EmailOutlinedIcon fontSize="small" />
                 <Typography variant="body2">{profile.email}</Typography>
+              </Stack>
+              <Stack
+                component="a"
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                direction="row"
+                spacing={1}
+                alignItems="center"
+                sx={{
+                  color: "text.secondary",
+                  textDecoration: "none",
+                  "&:hover": { color: "primary.main" },
+                }}
+              >
+                <LinkedInIcon fontSize="small" />
+                <Typography variant="body2">linkedin.com/in/keith-dale-c</Typography>
               </Stack>
               <Stack direction="row" spacing={1} alignItems="center" color="text.secondary">
                 <PhoneOutlinedIcon fontSize="small" />

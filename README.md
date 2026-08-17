@@ -7,8 +7,8 @@ They do **not** link to each other. Share only the URL meant for that company or
 
 | Profile | Path | Use for |
 |--------|------|---------|
-| Tech Lead (RCG) | `/tech-lead` | Tech Lead / leadership + frontend platform conversations |
-| Angular · Ionic (iScale) | `/mobile` | Senior Angular / Ionic / hybrid mobile conversations |
+| Tech Lead · Full Stack (RCG) | `/tech-lead` | Tech Lead / full-stack leadership conversations |
+| Full Stack · Angular · Ionic (iScale) | `/mobile` | Full-stack Angular / Ionic / hybrid mobile conversations |
 
 ### Local (dev)
 
@@ -29,8 +29,9 @@ https://YOUR-DOMAIN/mobile
 - `/` and unknown paths show a blank page on purpose (no profile index).
 - Do **not** send both links to the same company.
 - Profiles share the same career history below the top role; only the current role differs:
-  - **Tech Lead** → RCG Information Technology
-  - **Mobile** → iScale Ventures Inc. (Angular / Ionic)
+  - **Tech Lead · Full Stack** → RCG Information Technology
+  - **Mobile** → iScale Ventures Inc. (Full Stack · Angular / Ionic)
+- Both URLs share the same **Selected work** projects section (company names omitted; public links only where safe).
 
 ## Run locally
 

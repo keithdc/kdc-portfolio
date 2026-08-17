@@ -5,6 +5,7 @@
  */
 import { Box, Container, Stack, Typography, useTheme } from "@mui/material";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { TextAnimate } from "@/components/magicui/text-animate";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { useColorMode } from "@/shared/hooks/use-color-mode";
@@ -39,7 +40,9 @@ function AboutSection({ profile }: AboutSectionProps): React.JSX.Element {
               mb: 3,
             }}
           >
-            {profile.aboutHeading}
+            <TextAnimate animation="blurInUp" by="word" once as="span">
+              {profile.aboutHeading}
+            </TextAnimate>
           </Typography>
         </BlurFade>
 
@@ -103,7 +106,7 @@ function AboutSection({ profile }: AboutSectionProps): React.JSX.Element {
                 overflow: "hidden",
                 borderRadius: 4,
                 p: { xs: 3, md: 3.5 },
-                bgcolor: isDark ? "rgba(23,28,36,0.85)" : "rgba(255,255,255,0.85)",
+                bgcolor: isDark ? "rgba(23,28,36,0.85)" : "rgba(255,255,255,0.92)",
                 border: `1px solid ${theme.palette.divider}`,
                 backdropFilter: "blur(10px)",
               }}

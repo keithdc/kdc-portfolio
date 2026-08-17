@@ -7,9 +7,11 @@ import { useEffect } from "react";
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/navbar";
+import NavDock from "../components/nav-dock";
 import HeroSection from "../components/hero-section";
 import AboutSection from "../components/about-section";
 import ExperienceSection from "../components/experience-section";
+import ProjectsSection from "../components/projects-section";
 import SkillsSection from "../components/skills-section";
 import ContactSection from "../components/contact-section";
 import Footer from "../components/footer";
@@ -41,14 +43,16 @@ function PortfolioPage({ profile }: PortfolioPageProps): React.JSX.Element {
   }, [location.hash, profile.id]);
 
   return (
-    <Box sx={{ minHeight: "100vh", overflowX: "hidden" }}>
+    <Box sx={{ minHeight: "100vh", overflowX: "hidden", pb: { xs: 10, md: 8 } }}>
       <Navbar profile={profile} />
       <HeroSection profile={profile} />
       <AboutSection profile={profile} />
       <ExperienceSection profile={profile} />
+      <ProjectsSection profile={profile} />
       <SkillsSection profile={profile} />
       <ContactSection profile={profile} />
       <Footer />
+      <NavDock />
     </Box>
   );
 }

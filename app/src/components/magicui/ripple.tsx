@@ -20,7 +20,7 @@ function Ripple({
   mainCircleOpacity = 0.22,
   numCircles = 7,
   className,
-  color = "184, 122, 75",
+  color = "58, 90, 120",
 }: RippleProps): React.JSX.Element {
   return (
     <div

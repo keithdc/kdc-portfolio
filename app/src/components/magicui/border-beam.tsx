@@ -24,8 +24,8 @@ function BorderBeam({
   duration = 14,
   anchor = 90,
   borderWidth = 1.5,
-  colorFrom = "#B87A4B",
-  colorTo = "#2F5D62",
+  colorFrom = "#3A5A78",
+  colorTo = "#A67C52",
   delay = 0,
 }: BorderBeamProps): React.JSX.Element {
   return (

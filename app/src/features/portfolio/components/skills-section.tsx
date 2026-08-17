@@ -6,6 +6,7 @@
 import { Box, Container, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { TextAnimate } from "@/components/magicui/text-animate";
 import { Marquee } from "@/components/magicui/marquee";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { BoxReveal } from "@/components/magicui/box-reveal";
@@ -24,47 +25,49 @@ interface ChipTone {
 }
 
 /**
- * Professional category accents — one calm family each.
- * Soft fills, thin borders, ink text. No neon glow.
+ * Professional category accents — steel / slate / muted bronze families.
+ * Soft fills, thin borders. No neon glow.
  */
 const CATEGORY_TONE: Record<string, ChipTone> = {
-  frontend: { bg: "#F7F1EB", border: "#D9C2AB", text: "#6B4E38" },
-  mobile: { bg: "#EEF3F6", border: "#B7C9D4", text: "#3D5563" },
-  leadership: { bg: "#EEF3F2", border: "#B5C7C4", text: "#3A524F" },
+  frontend: { bg: "#EEF2F6", border: "#B8C7D6", text: "#2A4359" },
+  mobile: { bg: "#EEF1F4", border: "#B8C0C8", text: "#3F4C58" },
+  leadership: { bg: "#F5F0EB", border: "#D4C0A8", text: "#7A5A3A" },
   backend: { bg: "#EFF3EF", border: "#B8C7B8", text: "#3F5340" },
-  cloud: { bg: "#EFF2F6", border: "#B8C3D1", text: "#3E4C5E" },
-  tools: { bg: "#F5F0EF", border: "#D0BCB8", text: "#5C4541" },
+  cloud: { bg: "#EEF2F6", border: "#B5C2D0", text: "#3A5A78" },
+  testing: { bg: "#F0F3F6", border: "#B9C4CF", text: "#3F4C58" },
+  tools: { bg: "#F5F0EB", border: "#D0BCB0", text: "#7A5A3A" },
 };
 
 const DARK_CATEGORY_TONE: Record<string, ChipTone> = {
-  frontend: { bg: "rgba(184,122,75,0.12)", border: "rgba(184,122,75,0.28)", text: "#D4B08A" },
-  mobile: { bg: "rgba(100,140,160,0.12)", border: "rgba(100,140,160,0.28)", text: "#A8C0CC" },
-  leadership: { bg: "rgba(47,93,98,0.16)", border: "rgba(47,93,98,0.32)", text: "#9BB8BA" },
+  frontend: { bg: "rgba(58,90,120,0.16)", border: "rgba(58,90,120,0.34)", text: "#A8C0D4" },
+  mobile: { bg: "rgba(91,107,122,0.16)", border: "rgba(91,107,122,0.34)", text: "#B0BAC4" },
+  leadership: { bg: "rgba(166,124,82,0.14)", border: "rgba(166,124,82,0.32)", text: "#C4A07A" },
   backend: { bg: "rgba(80,120,90,0.14)", border: "rgba(80,120,90,0.3)", text: "#A8C4AE" },
-  cloud: { bg: "rgba(90,110,140,0.14)", border: "rgba(90,110,140,0.3)", text: "#A8B4C8" },
-  tools: { bg: "rgba(140,110,105,0.14)", border: "rgba(140,110,105,0.3)", text: "#C4AFA8" },
+  cloud: { bg: "rgba(58,90,120,0.14)", border: "rgba(58,90,120,0.3)", text: "#A8B8C8" },
+  testing: { bg: "rgba(91,107,122,0.14)", border: "rgba(91,107,122,0.3)", text: "#B0BAC4" },
+  tools: { bg: "rgba(166,124,82,0.12)", border: "rgba(166,124,82,0.28)", text: "#C4A07A" },
 };
 
-/** Core stack tiles — restrained copper / slate / teal only. */
+/** Core stack tiles — steel / slate / muted bronze. */
 const FEATURE_TILES_LIGHT: ChipTone[] = [
-  { bg: "#F7F1EB", border: "#D4B08A", text: "#6B4E38" },
-  { bg: "#EEF3F6", border: "#A8B8C4", text: "#3D5563" },
-  { bg: "#EEF3F2", border: "#A3B8B5", text: "#3A524F" },
-  { bg: "#F4F2F0", border: "#C8BDB4", text: "#5A534C" },
-  { bg: "#F7F1EB", border: "#D4B08A", text: "#6B4E38" },
-  { bg: "#EEF3F6", border: "#A8B8C4", text: "#3D5563" },
-  { bg: "#EEF3F2", border: "#A3B8B5", text: "#3A524F" },
-  { bg: "#F4F2F0", border: "#C8BDB4", text: "#5A534C" },
+  { bg: "#EEF2F6", border: "#A8BDD0", text: "#2A4359" },
+  { bg: "#EEF1F4", border: "#A8B4C0", text: "#3F4C58" },
+  { bg: "#F5F0EB", border: "#C4A07A", text: "#7A5A3A" },
+  { bg: "#F2F3F5", border: "#B8BDC4", text: "#4A5560" },
+  { bg: "#EEF2F6", border: "#A8BDD0", text: "#2A4359" },
+  { bg: "#EEF1F4", border: "#A8B4C0", text: "#3F4C58" },
+  { bg: "#F5F0EB", border: "#C4A07A", text: "#7A5A3A" },
+  { bg: "#F2F3F5", border: "#B8BDC4", text: "#4A5560" },
 ];
 
 const FEATURE_TILES_DARK: ChipTone[] = [
-  { bg: "rgba(184,122,75,0.14)", border: "rgba(184,122,75,0.3)", text: "#D4B08A" },
-  { bg: "rgba(100,140,160,0.14)", border: "rgba(100,140,160,0.3)", text: "#A8C0CC" },
-  { bg: "rgba(47,93,98,0.18)", border: "rgba(47,93,98,0.34)", text: "#9BB8BA" },
+  { bg: "rgba(58,90,120,0.16)", border: "rgba(58,90,120,0.34)", text: "#A8C0D4" },
+  { bg: "rgba(91,107,122,0.16)", border: "rgba(91,107,122,0.34)", text: "#B0BAC4" },
+  { bg: "rgba(166,124,82,0.14)", border: "rgba(166,124,82,0.32)", text: "#C4A07A" },
   { bg: "rgba(120,120,130,0.14)", border: "rgba(120,120,130,0.3)", text: "#B8B8C0" },
-  { bg: "rgba(184,122,75,0.14)", border: "rgba(184,122,75,0.3)", text: "#D4B08A" },
-  { bg: "rgba(100,140,160,0.14)", border: "rgba(100,140,160,0.3)", text: "#A8C0CC" },
-  { bg: "rgba(47,93,98,0.18)", border: "rgba(47,93,98,0.34)", text: "#9BB8BA" },
+  { bg: "rgba(58,90,120,0.16)", border: "rgba(58,90,120,0.34)", text: "#A8C0D4" },
+  { bg: "rgba(91,107,122,0.16)", border: "rgba(91,107,122,0.34)", text: "#B0BAC4" },
+  { bg: "rgba(166,124,82,0.14)", border: "rgba(166,124,82,0.32)", text: "#C4A07A" },
   { bg: "rgba(120,120,130,0.14)", border: "rgba(120,120,130,0.3)", text: "#B8B8C0" },
 ];
 
@@ -76,6 +79,7 @@ function resolveCategoryKey(category: string): string {
   if (value.includes("leadership")) return "leadership";
   if (value.includes("backend") || value.includes("data")) return "backend";
   if (value.includes("cloud") || value.includes("devops")) return "cloud";
+  if (value.includes("test") || value.includes("quality")) return "testing";
   if (value.includes("ai") || value.includes("tool")) return "tools";
   return "frontend";
 }
@@ -121,11 +125,11 @@ function SkillsSection({ profile }: SkillsSectionProps): React.JSX.Element {
             px: 1.75,
             py: 0.6,
             mb: 2,
-            bgcolor: isDark ? "rgba(23,28,36,0.8)" : "rgba(255,255,255,0.85)",
+            bgcolor: isDark ? "rgba(23,28,36,0.8)" : "rgba(255,255,255,0.9)",
           }}
         >
           <AnimatedShinyText className="text-sm font-semibold tracking-wide">
-            ✦ Frontend-first · Practical full-stack range
+            ✦ Full stack enabled · Frontend strength · End-to-end delivery
           </AnimatedShinyText>
         </Box>
 
@@ -134,7 +138,9 @@ function SkillsSection({ profile }: SkillsSectionProps): React.JSX.Element {
             variant="h2"
             sx={{ fontSize: { xs: "2rem", md: "3.1rem" }, maxWidth: 640, mb: 1.5 }}
           >
-            Skills shaped by real delivery.
+            <TextAnimate animation="blurInUp" by="word" once as="span">
+              Skills shaped by real delivery.
+            </TextAnimate>
           </Typography>
         </BoxReveal>
 
@@ -241,10 +247,10 @@ function SkillsSection({ profile }: SkillsSectionProps): React.JSX.Element {
               <BlurFade key={group.category} delay={0.1 + index * 0.05}>
                 <MagicCard
                   className="h-full"
-                  gradientFrom="#B87A4B"
-                  gradientTo="#2F5D62"
+                  gradientFrom="#3A5A78"
+                  gradientTo="#A67C52"
                   gradientColor={
-                    isDark ? "rgba(184,122,75,0.12)" : "rgba(184,122,75,0.08)"
+                    isDark ? "rgba(58,90,120,0.12)" : "rgba(58,90,120,0.08)"
                   }
                   gradientOpacity={0.5}
                 >
@@ -290,10 +296,10 @@ function SkillsSection({ profile }: SkillsSectionProps): React.JSX.Element {
           <BlurFade key={group.category} delay={0.08 + index * 0.05}>
             <MagicCard
               className="mb-3"
-              gradientFrom="#B87A4B"
-              gradientTo="#2F5D62"
+              gradientFrom="#3A5A78"
+              gradientTo="#5B6B7A"
               gradientColor={
-                isDark ? "rgba(47,93,98,0.12)" : "rgba(47,93,98,0.08)"
+                isDark ? "rgba(91,107,122,0.12)" : "rgba(91,107,122,0.08)"
               }
               gradientOpacity={0.5}
             >
@@ -337,7 +343,7 @@ function SkillsSection({ profile }: SkillsSectionProps): React.JSX.Element {
             borderTop: `1px solid ${theme.palette.divider}`,
             borderBottom: `1px solid ${theme.palette.divider}`,
             py: 2,
-            bgcolor: isDark ? "rgba(14,18,24,0.4)" : "rgba(255,255,255,0.55)",
+            bgcolor: isDark ? "rgba(14,18,24,0.4)" : "rgba(255,255,255,0.62)",
           }}
         >
           <Marquee pauseOnHover className="[--duration:50s]">

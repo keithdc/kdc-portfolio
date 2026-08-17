@@ -26,6 +26,23 @@ export interface PortfolioStat {
   suffix?: string;
 }
 
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
+
+export interface ProjectItem {
+  title: string;
+  summary: string;
+  role: string;
+  stack: string[];
+  outcome: string;
+  visibility: "public" | "internal";
+  /** One or more public links (e.g. App Store + Play Store). */
+  links?: ProjectLink[];
+  note?: string;
+}
+
 export interface PortfolioProfile {
   id: string;
   path: string;
@@ -43,9 +60,13 @@ export interface PortfolioProfile {
   email: string;
   phone: string;
   location: string;
+  linkedin: string;
   focusAreas: string[];
+  /** Short phrases rotated under the hero name. */
+  heroRotateWords: string[];
   stats: PortfolioStat[];
   experience: ExperienceItem[];
+  projects: ProjectItem[];
   skills: SkillGroup[];
   education: EducationItem[];
   techOrbit: string[];

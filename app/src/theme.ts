@@ -3,42 +3,44 @@
  * @shared
  * @dependencies @mui/material
  *
- * Visual direction: ink + copper on cool mist atmospheres.
- * Avoids purple gradients, cream/terracotta defaults, and broadsheet layouts.
+ * Visual direction: porcelain light default + steel primary, muted bronze accent.
+ * Avoids purple gradients, generic cream/terracotta stacks, and broadsheet layouts.
  */
 import { createTheme } from "@mui/material/styles";
 import type { PaletteMode } from "@mui/material";
+import { brand } from "@/features/portfolio/data/brand";
 
 /** Creates a theme instance for the given color mode. */
 function getTheme(mode: PaletteMode) {
   const isDark = mode === "dark";
+  const { steel, bronze, slate, ink } = brand;
 
   return createTheme({
     palette: {
       mode,
       primary: {
-        main: "#B87A4B",
-        light: "#D4A57A",
-        dark: "#8F5A32",
+        main: steel.main,
+        light: steel.light,
+        dark: steel.dark,
         contrastText: "#FFFFFF",
       },
       secondary: {
-        main: "#2F5D62",
-        light: "#4F7F84",
-        dark: "#1E3F43",
+        main: bronze.main,
+        light: bronze.light,
+        dark: bronze.dark,
         contrastText: "#FFFFFF",
       },
       background: {
-        default: isDark ? "#0E1218" : "#F3F5F7",
-        paper: isDark ? "#171C24" : "#FFFFFF",
+        default: isDark ? ink.darkBg : ink.lightBg,
+        paper: isDark ? ink.darkPaper : ink.lightPaper,
       },
       text: {
-        primary: isDark ? "#F2F4F7" : "#14181F",
-        secondary: isDark ? "#A8B0BC" : "#5B6574",
+        primary: isDark ? ink.textDark : ink.textLight,
+        secondary: isDark ? ink.textDarkMuted : ink.textLightMuted,
       },
       divider: isDark
-        ? "rgba(184, 122, 75, 0.18)"
-        : "rgba(47, 93, 98, 0.14)",
+        ? `rgba(${steel.rgb}, 0.22)`
+        : `rgba(${slate.rgb}, 0.18)`,
     },
     typography: {
       fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -98,9 +100,9 @@ function getTheme(mode: PaletteMode) {
             fontSize: "0.92rem",
           },
           contained: {
-            boxShadow: "0 10px 28px rgba(184, 122, 75, 0.28)",
+            boxShadow: `0 10px 28px rgba(${steel.rgb}, 0.28)`,
             "&:hover": {
-              boxShadow: "0 14px 34px rgba(184, 122, 75, 0.36)",
+              boxShadow: `0 14px 34px rgba(${steel.rgb}, 0.36)`,
             },
           },
           outlined: {
@@ -115,8 +117,8 @@ function getTheme(mode: PaletteMode) {
         styleOverrides: {
           body: {
             backgroundImage: isDark
-              ? "radial-gradient(ellipse 80% 50% at 10% -10%, rgba(184,122,75,0.14), transparent 55%), radial-gradient(ellipse 60% 40% at 90% 0%, rgba(47,93,98,0.18), transparent 50%)"
-              : "radial-gradient(ellipse 80% 50% at 8% -8%, rgba(184,122,75,0.12), transparent 55%), radial-gradient(ellipse 55% 45% at 92% 0%, rgba(47,93,98,0.10), transparent 50%), linear-gradient(180deg, #F7F8FA 0%, #EEF1F4 100%)",
+              ? `radial-gradient(ellipse 80% 50% at 10% -10%, rgba(${steel.rgb},0.16), transparent 55%), radial-gradient(ellipse 60% 40% at 90% 0%, rgba(${bronze.rgb},0.10), transparent 50%)`
+              : `radial-gradient(ellipse 80% 50% at 8% -8%, rgba(${steel.rgb},0.06), transparent 55%), radial-gradient(ellipse 55% 45% at 92% 0%, rgba(${bronze.rgb},0.05), transparent 50%), linear-gradient(180deg, #FDFCFB 0%, #F7F5F2 100%)`,
             backgroundAttachment: "fixed",
           },
         },

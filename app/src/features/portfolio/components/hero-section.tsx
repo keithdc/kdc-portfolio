@@ -7,6 +7,9 @@ import { Box, Container, Stack, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { Particles } from "@/components/magicui/particles";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { TextAnimate } from "@/components/magicui/text-animate";
+import { WordRotate } from "@/components/magicui/word-rotate";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { useColorMode } from "@/shared/hooks/use-color-mode";
 import portrait from "@/assets/keith-cordova.png";
@@ -32,12 +35,13 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
         position: "relative",
         overflow: "hidden",
         pt: { xs: 10, md: 8 },
+        pb: { xs: 10, md: 8 },
       }}
     >
       <Particles
         className="absolute inset-0 z-0"
         quantity={55}
-        color={isDark ? "#B87A4B" : "#8F5A32"}
+        color={isDark ? "#5C7D9A" : "#3A5A78"}
         size={0.45}
         staticity={35}
         ease={55}
@@ -49,7 +53,7 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
           inset: 0,
           background: isDark
             ? "linear-gradient(120deg, rgba(14,18,24,0.92) 0%, rgba(14,18,24,0.55) 48%, rgba(14,18,24,0.2) 100%)"
-            : "linear-gradient(120deg, rgba(243,245,247,0.96) 0%, rgba(243,245,247,0.72) 45%, rgba(243,245,247,0.18) 100%)",
+            : "linear-gradient(120deg, rgba(251,250,248,0.96) 0%, rgba(251,250,248,0.72) 45%, rgba(251,250,248,0.16) 100%)",
           zIndex: 0,
         }}
       />
@@ -64,27 +68,43 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
           }}
         >
           <Box>
-            <BlurFade delay={0.05} inView={false}>
-              <Typography
-                sx={{
-                  fontFamily: "'Syne', sans-serif",
-                  fontWeight: 700,
-                  fontSize: { xs: "2.4rem", sm: "3.2rem", md: "4.2rem" },
-                  lineHeight: 0.95,
-                  letterSpacing: "-0.04em",
-                  color: "text.primary",
-                  mb: 1.5,
-                }}
+            <Box
+              sx={{
+                fontFamily: "'Syne', sans-serif",
+                fontWeight: 700,
+                fontSize: { xs: "2.4rem", sm: "3.2rem", md: "4.2rem" },
+                lineHeight: 0.95,
+                letterSpacing: "-0.04em",
+                color: "text.primary",
+                mb: 1.5,
+              }}
+            >
+              <TextAnimate
+                as="span"
+                animation="blurInUp"
+                by="word"
+                startOnView={false}
+                once
+                delay={0.05}
+                className="block"
               >
                 Keith Dale
-                <Box component="span" sx={{ display: "block", color: "primary.main" }}>
+              </TextAnimate>
+              <Box
+                component="span"
+                sx={{ display: "block", color: "primary.main", mt: 0.5 }}
+              >
+                <SparklesText
+                  sparklesCount={5}
+                  colors={{ first: "#3A5A78", second: "#A67C52" }}
+                >
                   Cordova
-                </Box>
-              </Typography>
-            </BlurFade>
+                </SparklesText>
+              </Box>
+            </Box>
 
-            <BlurFade delay={0.18} inView={false}>
-              <Typography
+            <BlurFade delay={0.2} inView={false}>
+              <Box
                 sx={{
                   color: "secondary.main",
                   fontWeight: 600,
@@ -92,15 +112,15 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
                   textTransform: "uppercase",
                   fontSize: "0.78rem",
                   mb: 2,
+                  minHeight: "1.4em",
                 }}
               >
-                {profile.title} · {profile.tagline}
-              </Typography>
+                <WordRotate words={profile.heroRotateWords} duration={2600} />
+              </Box>
             </BlurFade>
 
-            <BlurFade delay={0.3} inView={false}>
-              <Typography
-                variant="h5"
+            <BlurFade delay={0.32} inView={false}>
+              <Box
                 sx={{
                   fontFamily: "'Syne', sans-serif",
                   fontWeight: 600,
@@ -111,11 +131,20 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
                   color: "text.primary",
                 }}
               >
-                {profile.headline}
-              </Typography>
+                <TextAnimate
+                  as="h2"
+                  animation="slideUp"
+                  by="word"
+                  startOnView={false}
+                  once
+                  delay={0.05}
+                >
+                  {profile.headline}
+                </TextAnimate>
+              </Box>
             </BlurFade>
 
-            <BlurFade delay={0.42} inView={false}>
+            <BlurFade delay={0.45} inView={false}>
               <Typography
                 variant="body1"
                 sx={{
@@ -138,9 +167,9 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
                 </a>
                 <a href="#experience" style={{ textDecoration: "none" }}>
                   <ShimmerButton
-                    shimmerColor={isDark ? "#B87A4B" : "#2F5D62"}
+                    shimmerColor={isDark ? "#5C7D9A" : "#3A5A78"}
                     background={
-                      isDark ? "rgba(23,28,36,0.92)" : "rgba(255,255,255,0.92)"
+                      isDark ? "rgba(23,28,36,0.92)" : "rgba(255,255,255,0.94)"
                     }
                     className={`text-sm font-semibold px-7 py-3 w-full sm:w-auto ${isDark ? "" : "!text-[#14181F]"}`}
                   >
@@ -165,8 +194,8 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
                   position: "absolute",
                   inset: { xs: "-8% -6%", md: "-10% -8%" },
                   background: isDark
-                    ? "radial-gradient(circle at 40% 30%, rgba(184,122,75,0.35), transparent 55%)"
-                    : "radial-gradient(circle at 40% 30%, rgba(184,122,75,0.28), transparent 55%)",
+                    ? "radial-gradient(circle at 40% 30%, rgba(58,90,120,0.35), transparent 55%)"
+                    : "radial-gradient(circle at 40% 30%, rgba(166,124,82,0.22), transparent 55%)",
                   filter: "blur(18px)",
                   zIndex: 0,
                 }}
@@ -198,7 +227,7 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
       <motion.div
         style={{
           position: "absolute",
-          bottom: 28,
+          bottom: 88,
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 2,
@@ -208,11 +237,11 @@ function HeroSection({ profile }: HeroSectionProps): React.JSX.Element {
       >
         <Box
           sx={{
+            display: { xs: "none", md: "flex" },
             width: 22,
             height: 36,
             border: `1.5px solid ${theme.palette.primary.main}66`,
             borderRadius: 12,
-            display: "flex",
             justifyContent: "center",
             pt: 0.8,
           }}
