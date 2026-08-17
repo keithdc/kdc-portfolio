@@ -6,5 +6,8 @@
     "build": "npm run build --prefix app",
     "preview": "npm run preview --prefix app",
     "lint": "npm run lint --prefix app"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

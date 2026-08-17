@@ -33,7 +33,13 @@ https://YOUR-DOMAIN/mobile
   - **Mobile** → iScale Ventures Inc. (Full Stack · Angular / Ionic)
 - Both URLs share the same **Selected work** projects section (company names omitted; public links only where safe).
 
-## Run locally
+## Deploy (Vercel)
+
+1. Import `keithdc/kdc-portfolio`
+2. Leave **Root Directory** as the repo root (`.`) — `vercel.json` already points build output to `app/dist`
+3. Or set Root Directory to `app` instead — then Vercel uses `app/vercel.json`
+
+Shareable URLs after deploy: `/tech-lead` and `/mobile`
 
 ```bash
 cd /Users/keithcordova/Developer/kdc-portfolio
