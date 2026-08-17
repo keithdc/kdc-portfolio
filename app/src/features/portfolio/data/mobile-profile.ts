@@ -45,7 +45,7 @@ export const mobileProfile: PortfolioProfile = {
   heroRotateWords: ["Full Stack", "Angular · Ionic", "Hybrid Mobile"],
   stats: [
     { label: "Years in frontend", value: 12, suffix: "+" },
-    { label: "Years in backend", value: 5, suffix: "+" },
+    { label: "Years in backend", value: 6, suffix: "+" },
     { label: "Hybrid releases", value: 15, suffix: "+" },
   ],
   techOrbit: [

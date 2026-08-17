@@ -56,7 +56,7 @@ export const techLeadProfile: PortfolioProfile = {
   ],
   stats: [
     { label: "Years in frontend", value: 12, suffix: "+" },
-    { label: "Years in backend", value: 5, suffix: "+" },
+    { label: "Years in backend", value: 6, suffix: "+" },
     {
       label: "Years leading teams",
       value: yearsSince(LEADERSHIP_START_YEAR),
