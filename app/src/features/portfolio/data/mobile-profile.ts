@@ -3,7 +3,7 @@
  * @feature portfolio
  */
 import type { PortfolioProfile } from "./types";
-import { CAREER_START_YEAR, yearsLabel, yearsSince } from "./career";
+import { CAREER_START_YEAR, yearsLabel } from "./career";
 import {
   sharedContact,
   sharedEducation,
@@ -44,8 +44,8 @@ export const mobileProfile: PortfolioProfile = {
   ],
   heroRotateWords: ["Full Stack", "Angular · Ionic", "Hybrid Mobile"],
   stats: [
-    { label: "Years in tech", value: yearsSince(CAREER_START_YEAR), suffix: "+" },
-    { label: "Years in frontend", value: 7, suffix: "+" },
+    { label: "Years in frontend", value: 12, suffix: "+" },
+    { label: "Years in backend", value: 5, suffix: "+" },
     { label: "Hybrid releases", value: 15, suffix: "+" },
   ],
   techOrbit: [

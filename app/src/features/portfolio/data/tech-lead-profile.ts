@@ -55,13 +55,13 @@ export const techLeadProfile: PortfolioProfile = {
     "Agile Delivery",
   ],
   stats: [
-    { label: "Years in tech", value: yearsSince(CAREER_START_YEAR), suffix: "+" },
+    { label: "Years in frontend", value: 12, suffix: "+" },
+    { label: "Years in backend", value: 5, suffix: "+" },
     {
       label: "Years leading teams",
       value: yearsSince(LEADERSHIP_START_YEAR),
       suffix: "+",
     },
-    { label: "Years in frontend", value: 7, suffix: "+" },
   ],
   techOrbit: [
     "Angular",
