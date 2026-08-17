@@ -43,7 +43,7 @@ function PortfolioPage({ profile }: PortfolioPageProps): React.JSX.Element {
   }, [location.hash, profile.id]);
 
   return (
-    <Box sx={{ minHeight: "100vh", overflowX: "hidden", pb: { xs: 10, md: 8 } }}>
+    <Box sx={{ minHeight: "100vh", overflowX: "hidden", pb: { xs: 8, md: 0 } }}>
       <Navbar profile={profile} />
       <HeroSection profile={profile} />
       <AboutSection profile={profile} />

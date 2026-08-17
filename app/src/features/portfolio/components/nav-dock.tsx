@@ -24,7 +24,7 @@ const DOCK_LINKS = [
   { label: "Contact", href: "#contact", Icon: MailOutlineIcon },
 ];
 
-/** Floating dock — mobile primary nav; desktop as a quiet secondary shortcut bar. */
+/** Floating dock — mobile-only section nav (desktop uses top navbar). */
 function NavDock(): React.JSX.Element {
   const theme = useTheme();
   const { mode, toggleColorMode } = useColorMode();
@@ -33,12 +33,12 @@ function NavDock(): React.JSX.Element {
   return (
     <Box
       sx={{
+        display: { xs: "flex", md: "none" },
         position: "fixed",
         left: 0,
         right: 0,
-        bottom: { xs: 14, md: 20 },
+        bottom: 14,
         zIndex: 1200,
-        display: "flex",
         justifyContent: "center",
         pointerEvents: "none",
         px: 2,

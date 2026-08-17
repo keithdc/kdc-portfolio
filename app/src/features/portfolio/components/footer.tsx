@@ -12,8 +12,8 @@ interface FooterProps {
 }
 
 /**
- * Centered brand close — copyright only.
- * LinkedIn lives in Contact + dock to avoid repeating the same link.
+ * Centered brand close.
+ * LinkedIn lives in Contact (and the mobile dock) — not repeated here.
  */
 function Footer({ profile }: FooterProps): React.JSX.Element {
   const year = new Date().getFullYear();
@@ -23,7 +23,7 @@ function Footer({ profile }: FooterProps): React.JSX.Element {
       component="footer"
       sx={{
         pt: { xs: 2, md: 3 },
-        pb: { xs: 12, md: 10 },
+        pb: { xs: 12, md: 5 },
         borderTop: (theme) => `1px solid ${theme.palette.divider}`,
       }}
     >
