@@ -147,23 +147,6 @@ function ContactSection({ profile }: ContactSectionProps): React.JSX.Element {
                 <EmailOutlinedIcon fontSize="small" />
                 <Typography variant="body2">{profile.email}</Typography>
               </Stack>
-              <Stack
-                component="a"
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                direction="row"
-                spacing={1}
-                alignItems="center"
-                sx={{
-                  color: "text.secondary",
-                  textDecoration: "none",
-                  "&:hover": { color: "primary.main" },
-                }}
-              >
-                <LinkedInIcon fontSize="small" />
-                <Typography variant="body2">linkedin.com/in/keith-dale-c</Typography>
-              </Stack>
               <Stack direction="row" spacing={1} alignItems="center" color="text.secondary">
                 <PhoneOutlinedIcon fontSize="small" />
                 <Typography variant="body2">{profile.phone}</Typography>

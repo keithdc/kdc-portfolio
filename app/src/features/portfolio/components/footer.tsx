@@ -1,46 +1,70 @@
 /**
- * @file footer.tsx — Site footer
+ * @file footer.tsx — Calm closing footer (no redundant social links)
  * @feature portfolio
  * @dependencies @mui/material
  */
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { CAREER_START_YEAR } from "../data/career";
-import { sharedContact } from "../data/shared-experience";
+import type { PortfolioProfile } from "../data/types";
 
-/** Minimal footer with copyright + LinkedIn — no cross-profile links. */
-function Footer(): React.JSX.Element {
+interface FooterProps {
+  profile: PortfolioProfile;
+}
+
+/**
+ * Centered brand close — copyright only.
+ * LinkedIn lives in Contact + dock to avoid repeating the same link.
+ */
+function Footer({ profile }: FooterProps): React.JSX.Element {
   const year = new Date().getFullYear();
 
   return (
     <Box
       component="footer"
       sx={{
-        py: 4,
+        pt: { xs: 2, md: 3 },
+        pb: { xs: 12, md: 10 },
         borderTop: (theme) => `1px solid ${theme.palette.divider}`,
       }}
     >
       <Container maxWidth="lg">
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={1.5}
-          justifyContent="space-between"
-          alignItems={{ xs: "flex-start", sm: "center" }}
+        <Box
+          sx={{
+            textAlign: "center",
+            maxWidth: 420,
+            mx: "auto",
+            py: { xs: 3, md: 4 },
+          }}
         >
-          <Typography variant="body2" color="text.secondary">
-            © {CAREER_START_YEAR}–{year} Keith Dale Cordova
-          </Typography>
-          <Link
-            href={sharedContact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            underline="hover"
-            color="text.secondary"
-            variant="body2"
-            sx={{ fontWeight: 500 }}
+          <Typography
+            sx={{
+              fontFamily: "'Syne', sans-serif",
+              fontWeight: 700,
+              fontSize: "0.95rem",
+              letterSpacing: "-0.02em",
+              color: "text.primary",
+              mb: 0.75,
+            }}
           >
-            LinkedIn
-          </Link>
-        </Stack>
+            Keith Dale Cordova
+          </Typography>
+          <Typography
+            variant="caption"
+            sx={{
+              display: "block",
+              color: "text.secondary",
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              fontWeight: 600,
+              mb: 2,
+            }}
+          >
+            {profile.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            © {CAREER_START_YEAR}–{year}
+          </Typography>
+        </Box>
       </Container>
     </Box>
   );

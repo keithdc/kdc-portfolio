@@ -51,7 +51,7 @@ function PortfolioPage({ profile }: PortfolioPageProps): React.JSX.Element {
       <ProjectsSection profile={profile} />
       <SkillsSection profile={profile} />
       <ContactSection profile={profile} />
-      <Footer />
+      <Footer profile={profile} />
       <NavDock />
     </Box>
   );
