@@ -55,6 +55,7 @@ export const techLeadProfile: PortfolioProfile = {
     "Agile Delivery",
   ],
   stats: [
+    { label: "Total years of experience", value: 12, suffix: "+" },
     { label: "Years in frontend", value: 12, suffix: "+" },
     { label: "Years in backend", value: 6, suffix: "+" },
     {
