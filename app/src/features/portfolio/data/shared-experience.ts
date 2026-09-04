@@ -132,9 +132,9 @@ export const sharedProjects: ProjectItem[] = [
   {
     title: "Hybrid Soccer Training App",
     summary:
-      "Cross-platform Ionic soccer training app for players and coaches—built for real store distribution on both iOS and Android with a focus on clear UX and reliable hybrid delivery.",
+      "Cross-platform Ionic soccer training app for players and coaches—built with Angular on the client and Ruby on the backend for real store distribution on both iOS and Android, with a focus on clear UX and reliable hybrid delivery.",
     role: "Frontend / Mobile contributor",
-    stack: ["Ionic", "Angular", "TypeScript", "iOS", "Android"],
+    stack: ["Ionic", "Angular", "TypeScript", "Ruby", "iOS", "Android"],
     outcome: "Live on the Apple App Store and Google Play.",
     visibility: "public",
     links: [
