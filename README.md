@@ -8,20 +8,20 @@ They do **not** link to each other. Share only the URL meant for that company or
 | Profile | Path | Use for |
 |--------|------|---------|
 | Tech Lead · Full Stack (RCG) | `/tech-lead` | Tech Lead / full-stack leadership conversations |
-| Full Stack · Angular · Ionic (iScale) | `/mobile` | Full-stack Angular / Ionic / hybrid mobile conversations |
+| Full Stack · Angular · Ionic (iScale) | `/full-stack` | Full-stack Angular / Ionic / hybrid mobile conversations |
 
 ### Local (dev)
 
 ```text
 http://127.0.0.1:5173/tech-lead
-http://127.0.0.1:5173/mobile
+http://127.0.0.1:5173/full-stack
 ```
 
 ### After you deploy (replace with your domain)
 
 ```text
 https://YOUR-DOMAIN/tech-lead
-https://YOUR-DOMAIN/mobile
+https://YOUR-DOMAIN/full-stack
 ```
 
 ### Important
@@ -30,8 +30,9 @@ https://YOUR-DOMAIN/mobile
 - Do **not** send both links to the same company.
 - Profiles share the same career history below the top role; only the current role differs:
   - **Tech Lead · Full Stack** → RCG Information Technology
-  - **Mobile** → iScale Ventures Inc. (Full Stack · Angular / Ionic)
+  - **Full Stack** → iScale Ventures Inc. (Angular / Ionic)
 - Both URLs share the same **Selected work** projects section (company names omitted; public links only where safe).
+- `/mobile` redirects to `/full-stack` for older links.
 
 ## Deploy (Vercel)
 
@@ -39,7 +40,7 @@ https://YOUR-DOMAIN/mobile
 2. Leave **Root Directory** as the repo root (`.`) — `vercel.json` already points build output to `app/dist`
 3. Or set Root Directory to `app` instead — then Vercel uses `app/vercel.json`
 
-Shareable URLs after deploy: `/tech-lead` and `/mobile`
+Shareable URLs after deploy: `/tech-lead` and `/full-stack`
 
 ```bash
 cd /Users/keithcordova/Developer/kdc-portfolio

@@ -4,7 +4,7 @@
  * @dependencies @mui/material, react-router-dom, theme, color-mode
  */
 import { useMemo, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   ThemeProvider,
   CssBaseline,
@@ -18,8 +18,8 @@ import { ColorModeProvider, useColorMode } from "./shared/hooks/use-color-mode";
 const TechLeadPage = lazy(
   () => import("./features/portfolio/pages/tech-lead-page"),
 );
-const MobilePage = lazy(
-  () => import("./features/portfolio/pages/mobile-page"),
+const FullStackPage = lazy(
+  () => import("./features/portfolio/pages/full-stack-page"),
 );
 
 /** Loading fallback for lazy routes. */
@@ -71,7 +71,8 @@ function AppContent(): React.JSX.Element {
           <Routes>
             <Route path="/" element={<RootBlank />} />
             <Route path="/tech-lead" element={<TechLeadPage />} />
-            <Route path="/mobile" element={<MobilePage />} />
+            <Route path="/full-stack" element={<FullStackPage />} />
+            <Route path="/mobile" element={<Navigate to="/full-stack" replace />} />
             <Route path="*" element={<RootBlank />} />
           </Routes>
         </Suspense>
