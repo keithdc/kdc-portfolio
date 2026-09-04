@@ -28,11 +28,11 @@ export const techLeadProfile: PortfolioProfile = {
   tagline: "Tech Lead · Front End Expertise · Full Stack · Agile Delivery",
   title: "Tech Lead · Full Stack",
   headline:
-    "I lead engineering teams and ship full-stack products that move business goals forward.",
-  summary: `Results-driven Tech Lead with ${yearsInTech} years in software development and ${yearsLeading} years leading teams. Full-stack capable—strongest in frontend architecture (Angular, React, TypeScript) with solid backend range across Node.js APIs, SQL, and end-to-end delivery.`,
-  about: `I’m a Tech Lead and full-stack engineer with ${yearsInTech} years building software and ${yearsLeading} years managing and mentoring development teams in Agile environments. I ship across the stack—frontend platforms in Angular, React, and TypeScript, plus backend work in Node.js APIs, SQL, and practical service collaboration. At RCG Information Technology, I lead design and delivery of software solutions, partner on architecture and technical strategy, and raise quality through standards, reviews, and AI-assisted workflows. My edge is owning features end to end so teams stay unblocked from UI through data and APIs.`,
+    "I lead engineering teams and ship full-stack Angular and React.js products that move business goals forward.",
+  summary: `Results-driven Tech Lead with ${yearsInTech} years in software development and ${yearsLeading} years leading teams. Full-stack capable—strongest in frontend architecture (Angular, React.js, TypeScript) with solid backend range across Node.js APIs, MySQL/SQL, and end-to-end delivery.`,
+  about: `I’m a Tech Lead and full-stack engineer with ${yearsInTech} years building software and ${yearsLeading} years managing and mentoring development teams in Agile environments. I ship across the stack—frontend platforms in Angular, React.js, and TypeScript, plus backend work in Node.js APIs, MySQL/SQL, and practical service collaboration. At RCG Information Technology, I lead design and delivery of software solutions, partner on architecture and technical strategy, and raise quality through standards, reviews, and AI-assisted workflows. My edge is owning features end to end so teams stay unblocked from UI through data and APIs.`,
   expertiseNote:
-    "Full stack enabled: frontend platforms + Node.js APIs, SQL, and delivery leadership.",
+    "Full stack enabled: Angular & React.js platforms + Node.js APIs, MySQL/SQL, and delivery leadership.",
   contactBlurb:
     "Open to Tech Lead and full-stack engineering leadership roles where ownership, architecture, and strong delivery matter. Reach me on email, LinkedIn, WhatsApp, or Viber.",
   aboutHeading: "Leadership with full-stack ownership.",
@@ -43,10 +43,10 @@ export const techLeadProfile: PortfolioProfile = {
   focusAreas: [
     "Technical leadership & mentoring",
     "Full-stack delivery (UI → APIs → SQL)",
-    "Frontend architecture (Angular, React, TypeScript)",
-    "Node.js APIs & data collaboration",
+    "Frontend architecture (Angular, React.js, TypeScript)",
+    "Angular upgrades & modern architecture",
+    "MySQL",
     "Agile delivery & process design",
-    "AI-augmented engineering workflows",
   ],
   heroRotateWords: [
     "Tech Lead",
@@ -66,11 +66,11 @@ export const techLeadProfile: PortfolioProfile = {
   ],
   techOrbit: [
     "Angular",
-    "React",
+    "React.js",
     "TypeScript",
     "Next.js",
     "Node.js",
-    "SQL",
+    "MySQL",
     "CI/CD",
     "AWS",
   ],
@@ -95,11 +95,28 @@ export const techLeadProfile: PortfolioProfile = {
   skills: [
     {
       category: "Frontend (Core)",
-      items: sharedSkillGroups.frontendCore,
+      items: [
+        "Angular",
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "RxJS / NgRx / Redux",
+        "MUI / Angular Material",
+        "Signals / Hooks",
+      ],
     },
     {
       category: "Backend & Data",
-      items: sharedSkillGroups.backendPractical,
+      items: [
+        "Node.js / Express APIs",
+        "REST API design",
+        "SQL queries & stored procedures",
+        "MySQL / PostgreSQL",
+        "NoSQL",
+        "Firebase",
+        "Server setup & deployments",
+      ],
     },
     {
       category: "Leadership",

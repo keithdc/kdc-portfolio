@@ -3,11 +3,11 @@
  * @feature portfolio
  */
 import PortfolioPage from "./portfolio-page";
-import { mobileProfile } from "../data/mobile-profile";
+import { fullStackProfile } from "../data/full-stack-profile";
 
 /** Full Stack CV route — shareable at /full-stack. */
 function FullStackPage(): React.JSX.Element {
-  return <PortfolioPage profile={mobileProfile} />;
+  return <PortfolioPage profile={fullStackProfile} />;
 }
 
 export default FullStackPage;

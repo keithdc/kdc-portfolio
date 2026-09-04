@@ -67,6 +67,6 @@ App source lives in `app/`.
 | Profile data | File |
 |--------------|------|
 | Tech Lead | `app/src/features/portfolio/data/tech-lead-profile.ts` |
-| Full Stack | `app/src/features/portfolio/data/mobile-profile.ts` |
+| Full Stack | `app/src/features/portfolio/data/full-stack-profile.ts` |
 | Shared experience | `app/src/features/portfolio/data/shared-experience.ts` |
 | Routes | `app/src/App.tsx` |
