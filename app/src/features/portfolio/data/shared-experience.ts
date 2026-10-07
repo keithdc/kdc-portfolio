@@ -12,7 +12,7 @@ export const sharedExperience: ExperienceItem[] = [
   {
     role: "Development Manager · Senior Frontend Developer",
     company: "Finch LLC",
-    period: "Oct 2019 – Nov 2024",
+    period: "Oct 2019 – March 2025",
     highlights: [
       "Progressed from Senior Frontend Developer into Development Manager (from Sept 2021), leading delivery while staying hands-on in frontend craft.",
       "Managed and led a development team shipping enterprise web applications and internal business platforms end to end.",
