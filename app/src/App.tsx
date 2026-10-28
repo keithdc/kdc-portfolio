@@ -70,7 +70,7 @@ function AppContent(): React.JSX.Element {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<RootBlank />} />
-            <Route path="/tech-lead" element={<TechLeadPage />} />
+            {/* <Route path="/tech-lead" element={<TechLeadPage />} /> */}
             <Route path="/full-stack" element={<FullStackPage />} />
             <Route path="/mobile" element={<Navigate to="/full-stack" replace />} />
             <Route path="*" element={<RootBlank />} />
