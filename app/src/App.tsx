@@ -15,9 +15,9 @@ import {
 import getTheme from "./theme";
 import { ColorModeProvider, useColorMode } from "./shared/hooks/use-color-mode";
 
-const TechLeadPage = lazy(
-  () => import("./features/portfolio/pages/tech-lead-page"),
-);
+// const TechLeadPage = lazy(
+//   () => import("./features/portfolio/pages/tech-lead-page"),
+// );
 const FullStackPage = lazy(
   () => import("./features/portfolio/pages/full-stack-page"),
 );
